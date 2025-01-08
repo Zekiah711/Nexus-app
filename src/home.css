@@ -1,0 +1,1029 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0; /* Ensure no default padding */
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+  }
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E6F0FF;
+    padding: 20px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 20px; /* Space between elements */
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: flex-start; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  .logo {
+    max-width: 118px; /* Original width */
+    height: auto; /* Maintains aspect ratio */
+  }
+  
+
+
+  /* Search Bar Styling */
+  header .search-bar {
+    flex-grow: 2;
+    min-width: 48px;
+    max-width: 469px;
+    height: 50px;
+    border-radius: 12px;
+    border: 2px solid #96C0FF;
+    padding: 1px;
+    gap: 14px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 30px; /* Add margin to separate it from the Explore button */
+  }
+  
+  /* Search Icon Wrapper Styling */
+  header .search-icon-wrapper {
+    position: absolute;
+    left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #96C0FF;
+    pointer-events: none;
+    width: 13px;
+    height: 13px;
+  }
+  
+  /* Input Field Styling */
+  header .search-bar input {
+    width: 100%;
+    height: 2em;
+    font-family: 'Inter', sans-serif;
+    background-color: transparent;
+    outline: none;
+    font-size: 1em;
+    padding-left: 40px;
+    border: none;
+    border-radius: 12px;
+    box-sizing: border-box;
+  }
+
+  header .search-bar input::placeholder {
+    color: #96C0FF; /* Blue placeholder */
+  }
+
+  header nav button:hover{
+    color:  #4487ec; /* Change text color on hover */
+    transition: color 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Wallet Button Styling */
+  header nav .connect-wallet {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    font-weight: bolder;
+    padding: 15px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    
+  }
+
+  header nav .connect-wallet:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #fff; /* Ensure text remains white */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  }
+  
+  header nav .connect-wallet .wallet-icon {
+    font-size: 14px;
+  }
+  
+
+
+
+
+  /* Hero Section Styling */
+  .hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 30px;
+    background-color: #0066ff51;
+    gap: 30px;
+  }
+  
+  .text-section {
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .text-section h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #003E9C;
+    margin: 0 0 15px;
+  }
+  
+  .text-section p {
+    font-size: 16px;
+    color: #4b4b4b;
+    font-weight: bold;
+    margin: 0 0 20px;
+    line-height: 1.7;
+  }
+
+  .text-section .button-container {
+    display: flex;
+    gap: 20px; /* Adds space between buttons */
+    margin-top: 20px; /* Adds space above the buttons */
+    flex-wrap: wrap; /* Allows buttons to wrap onto a new line */
+  }
+  .text-section .button-container button {
+    background-color: transparent;
+    color: #0047B3;
+    border: 2px solid #0065FF;
+    padding: 10px 40px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-width: 150px; /* Ensures buttons are wide enough */
+    max-width: 200px; /* Limits the button width for consistent spacing */
+    width: auto; /* Adjust width based on content */
+    box-sizing: border-box; /* Prevents padding from affecting width */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-section .button-container button:hover {
+    background-color: #0065FF; /* Adds background color on hover */
+    color: #fff; /* Changes text color to white */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  
+  }
+  
+  .image-section {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .image-section img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  
+
+
+
+
+
+
+/* Why Explore Section */
+.why-explore {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    margin: 0 auto;
+  }
+  
+  .why-explore .why-title h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0033cc;
+    margin-bottom: 1em;
+  }
+  
+  .why-explore .why-title p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    font-weight: bold;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 4em;
+  }
+  
+  .features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(48, 33, 33, 0.181);
+    padding: 14px 20px;
+    flex: 1;
+    max-width: 320px;
+    text-align: center;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-card .icon img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+  }
+  
+  .feature-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0033cc;
+    margin-bottom: 6px;
+  }
+  
+  .feature-card p {
+    font-size: 13px;
+    color: #555;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  
+  .feature-card a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .feature-card a:hover {
+    text-decoration: underline;
+  }
+  
+
+
+  /* Our features  */
+/* General Styles */
+.our-features {
+  background-color: #ffffff;
+}
+
+.features-title {
+   font-size: 28px;
+   font-weight: 700;
+   color: #0033cc;
+   margin-bottom: 30px;
+   text-align: center;
+}
+
+.features-container {
+ width: 100%;
+ height: auto;  /* Change height to auto to allow flexibility */
+ display: flex;
+ justify-content: space-between;  /* Aligns content horizontally */
+ background-color: #C2D6FF;
+ padding: 0;  /* Remove any padding to ensure the container takes full width */
+ margin: 0; /* Ensure there's no margin */
+ flex-wrap: wrap;  /* Allows wrapping of elements on smaller screens */
+}
+
+.features-text {
+  flex: 1;  /* Makes the text section take up remaining space */
+  text-align: left;
+  width: 50%;
+  max-width: 100%;
+  padding: 3em 0em 0em 4rem;
+}
+
+.features-text h3 {
+ font-size: 20px;
+ font-weight: 700;
+ color: #0033cc;
+ margin-bottom: 10px;
+}
+
+.features-text p {
+ font-size: 16px;
+ color: #555;
+ font-weight: bold;
+ line-height: 1.6;
+ margin-bottom: 20px;
+}
+
+.read-more-btn {
+ display: inline-block;
+ padding: 10px 20px;
+ font-size: 14px;
+ width: 192px;
+ text-align: center;
+ font-weight: 600;
+ color: #0033cc;
+ border: 2px solid #0033cc;
+ border-radius: 8px;
+ text-decoration: none;
+ transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+ background-color: #0033cc;
+ color: #fff;
+ transform: translateY(-2px);
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+
+.features-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image doesn’t get cut off */
+}
+
+
+
+
+
+
+/* E-Learning Features Section */
+.elearning-features {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f9faff;
+}
+
+.elearning-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0033cc;
+  margin-bottom: 40px;
+}
+
+.elearning-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature-item {
+  text-align: center;
+  flex: 1;
+  max-width: 200px;
+}
+
+.feature-icon {
+  width: 64px;
+  align-items: center;
+  height: 64px;
+  border: 2px solid #0033cc;
+  border-radius: 20%;
+  margin: 0 auto 10px auto;
+}
+
+.feature-icon img{
+  padding-top: 4px;
+}
+
+.feature-item p {
+  font-size: 14px;
+  color: #555;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+/* LEARNING ADVENTURE */
+/* Main Container */
+.learning-adventure {
+  padding: 20px;
+  background-color: #f8f8f8; /* Light gray */
+}
+
+/* Header Section */
+.learning-header {
+  text-align: center;
+  background-color: #F2F2F2; /* Slightly darker background */
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.learning-header h2 {
+  font-size: 24px;
+  color: #0033cc;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.learning-header p {
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: bold;
+  color: #555;
+  margin: 0;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+/* Navigation Links */
+.learning-nav ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.learning-nav li {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 18px; /* Adds space under the links */
+}
+
+
+.learning-nav li:hover {
+  color: #0033cc;
+  text-decoration: none;
+  border-bottom: 3px solid #0033cc;
+  border-radius: 1px; 
+  padding-bottom: 5px;
+  transition: border-bottom 0.3s ease, padding-bottom 0.3s ease; /* Smooth transitions for border and padding */
+}
+
+.learning-nav li.active {
+  color: #0033cc;
+  border-bottom: 3px solid #0033cc;
+  padding-bottom: 5px;
+}
+
+.learning-buttons {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.learning-buttons[style*="display: flex"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Buttons Section */
+.learning-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; 
+  padding: 10px; 
+}
+
+.learning-buttons button {
+  margin: 10px; /* Adds spacing around each button */
+  background-color: transparent;
+  border: 2px solid #0033cc;
+  color: #0033cc;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.learning-buttons button:hover {
+  background-color: #0033cc;
+  color: #fff;
+  transform: translateY(-4px); /* Hover effect */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Level Up Section DESIGN */
+
+.level-up {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+  background-color: #fff;
+}
+
+.level-up h2 {
+  font-size: 24px;
+  color: #0033cc;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Card Container */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 55px;
+  flex-wrap: wrap;
+}
+
+/* Individual Card */
+.card {
+  width: 200px;
+  padding: 20px;
+  border: 2px solid #abbfe57e;
+  border-radius: 0px;
+  text-align: center;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(36, 3, 200, 0.173);
+}
+
+/* Icon */
+.card .icon img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+/* Card Text */
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* Read More Link */
+.card a {
+  color: #0033cc;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  color: #001a66;
+  text-decoration: underline;
+}
+
+
+
+
+/* Get Started Section */
+.get-started {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.content {
+  max-width: 50%;
+  margin-left: 50px;
+}
+
+.content h2 {
+  font-size: 24px;
+  color: #0033cc;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.6;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.description a {
+  color: #0033cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.description a:hover {
+  text-decoration: underline;
+}
+
+.enroll-button {
+  background-color: transparent;
+  border: 2px solid #0033cc;
+  color: #0033cc;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.enroll-button:hover {
+  background-color: #0033cc;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.image img {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* FOOTERRRRRRR Styles */
+.footer {
+  background-color: #C6DDFF; /* Deep blue */
+  color: #0047B3;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 0 40px; /* Add padding for equal spacing on the sides */
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align content */
+  text-align: center; /* Center-align text */
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #0047B3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #2cb0d2; /* Light blue hover effect */
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-social a {
+  color: #0047B3;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #2cb0d2; /* Light blue hover effect */
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #0047B3;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Back to Top Button Styles */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0047B3;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  background-color: #2cb0d2;
+  transform: scale(1.1);
+}
+
+.back-to-top:focus {
+  outline: none;
+}
+
+
+
+
+
+
+/* MEDIA QUERYYYYYYYYY */
+/* logo MQ */
+@media (max-width: 768px) {
+  .logo-container {
+    justify-content: center; /* Center horizontally */
+    width: 100%; /* Ensure the container spans the full width */
+  }
+  .logo {
+    max-width: 100px; /* Slightly smaller size for mobile */
+  }
+}
+
+/* header */
+  /* Media Queries for Smaller Screens */
+ @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    header .search-bar {
+      width: 100%;
+      margin: 10px 0; /* Space above and below the search bar */
+    }
+  
+    header nav {
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+  
+    header nav button {
+      margin-right: 10px;
+    }
+  
+    header nav .connect-wallet {
+        width: auto; /* Prevent full width */
+        max-width: 200px; /* Optional: Limit the maximum width */
+        margin: 0 auto; /* Center the button */
+    }
+  }
+
+
+
+
+  /* media for hero section */
+
+  /* For smaller screens (max-width 768px) */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 20px 10px;
+  }
+
+  .text-section {
+    margin-left: 0;
+    text-align: center; /* Centers the text */
+    margin-bottom: 20px; /* Adds some spacing between text and image */
+  }
+
+  .image-section {
+    text-align: center; /* Centers the image */
+    margin-top: 20px;
+  }
+
+  .text-section .button-container {
+    gap: 20px; /* Reduces the gap between buttons */
+    justify-content: center; /* Centers the buttons */
+  }
+
+  .text-section .button-container button {
+    width: 100%; /* Make buttons take full width on small screens */
+    max-width: 300px; /* Limits the button width */
+  }
+}
+
+
+
+/*Why explore section */
+
+  @media (max-width: 768px) {
+    .features {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .feature-card {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+
+/* Our features  */
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .features-container {
+    flex-direction: column;  /* Stacks the text and image vertically on small screens */
+    gap: 10px;
+  }
+
+  .features-text,
+  .features-image {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .features-image img {
+    object-fit: contain;
+    height: auto;
+  }
+}
+
+/* Tablet-Specific Adjustments (between 768px and 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .features-container {
+    flex-direction: row;  /* Keeps elements in row layout on tablet size */
+    justify-content: center;  /* Centers the entire container */
+  }
+
+  .features-image {
+    margin: 0 auto;  /* Centers the image */
+  }
+}
+
+
+
+
+ /* e learning   */
+
+ @media (max-width: 768px) {
+  .elearning-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-item {
+    max-width: 100%;
+  }
+}
+
+
+
+
+
+/* LEARNING ADVENTURE  */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .learning-header h2 {
+    font-size: 20px;
+  }
+
+  .learning-header p {
+    font-size: 14px;
+  }
+
+  .learning-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .learning-buttons {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .learning-buttons button {
+    width: 100%; /* Full width on small screens */
+    max-width: 300px; /* Limit button size */
+    margin: 10px 30px; /* Adds space between buttons */
+  }
+}
+
+
+
+/* LEVEL UP Responsive Design */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+
+
+
+/* GET STARTEDDDDD */
+/* Responsive Design */
+@media (max-width: 768px) {
+  .get-started {
+    flex-direction: column;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .content {
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+
+  .image img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+
+/* MQ  Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px; /* Adjust padding for smaller screens */
+  }
+
+  .footer-about,
+  .footer-links,
+  .footer-social {
+    min-width: 10%;
+  }
+}

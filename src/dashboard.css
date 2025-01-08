@@ -1,0 +1,763 @@
+/* Global Reset */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+
+
+.dashboard-container {
+  display: flex;
+  height: auto;
+  flex-direction: row; /* Full viewport height */
+  margin-top: 110px; /* Height of the fixed header */
+}
+
+.main-content {
+  flex: 3; /* Take up remaining space */
+  padding: 15px;
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.right-panel {
+  width: 300px; /* Fixed width for the right panel */
+  padding: 20px;
+  flex: 1;
+  background-color: #f9f9f9; /* Background color for differentiation */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+
+
+
+
+
+/* Header Styles */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure the header stays on top */
+}
+
+.header-logo{
+  height: 70px;
+  width: 70px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header-content {
+  display: flex;
+  justify-content: center; /* Center the search bar */
+  align-items: center;
+  flex-grow: 1;
+  position: relative;
+  width: 100%;
+}
+
+.header-content .search-bar {
+  flex-grow: 1; /* Allow the search bar to expand and fill space */
+  max-width: 500px; /* Set a max width to prevent it from getting too large */
+  height: 40px;
+  border-radius: 12px;
+  border: 2px solid #96C0FF;
+  padding: 1px;
+  gap: 14px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 20px; /* Add margin to ensure spacing between search and profile */
+}
+
+
+/* Search Icon Wrapper Styling */
+.header-content .search-icon-wrapper {
+  position: absolute;
+  left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #96C0FF;
+  pointer-events: none;
+  width: 13px;
+  height: 13px;
+}
+
+/* Input Field Styling */
+.header-content .search-bar input {
+  width: 100%;
+  height: 2em;
+  font-family: 'Inter', sans-serif;
+  background-color: transparent;
+  outline: none;
+  font-size: 1em;
+  padding-left: 40px;
+  border: none;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.header-content .search-bar input::placeholder {
+  color: #96C0FF; /* Blue placeholder */
+  font-size: 14px;
+}
+
+.profile-section {
+  display: flex;
+  gap: 40px; /* Space between icons */
+  padding: 8px 15px;
+  cursor: pointer;
+  position: absolute;
+  right: 15px; /* Position profile at the right side */
+}
+
+.profile-icon {
+  font-size: 24px; /* Adjust icon size */
+  color: #808080; /* Initial icon color */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover Effect */
+.profile-icon:hover {
+  color: #0962e8; /* Change color on hover */
+}
+
+
+
+
+
+
+
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #e6f0ff;
+  transition: left 0.3s ease; /* Smooth transition for moving the sidebar */
+  padding: 20px;
+  z-index: 999; /* Sidebar layer below the header */
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: thin; /* Thin scrollbar for Firefox */
+  scrollbar-color: #8db6f8 #e6f0ff; /* Scrollbar color for Firefox */
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #e6f0ff; /* Scrollbar track color */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #888; /* Scrollbar thumb color */
+  border-radius: 20px; /* Round edges for the scrollbar */
+  border: 2px solid #e6f0ff; /* Optional: Add padding effect around thumb */
+}
+
+.sidebar.open {
+  left: 0; /* Bring sidebar into view when open */
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.logo {
+  height: 80px;
+  width: 80px;
+
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  padding: 10px 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center; /* Vertically center-align the items */
+  cursor: pointer;
+  color: #808080;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+
+.sidebar-nav .last{
+  margin-bottom: 20em;
+}
+
+
+.sidebar-nav li img {
+  margin-right: 1em; /* Space between the icon and text */
+  width: 40px;
+  height: 40px;
+}
+
+.last-div{
+  color: transparent;
+  margin-top: -3.6em;
+}
+
+.sidebar-nav li:hover {
+  background-color: #96C0FF;
+  border-radius: 12px;
+  color: #0047B3;
+}
+
+#disconnect {
+  text-decoration: none; /* Removes underline */
+  list-style: none;      /* Ensures no bullet point appears */
+}
+
+
+ #disconnect:hover{
+  background-color: #e80712c2;
+  color: #420303;
+} 
+
+
+
+
+/* SimilarCourses.css */
+
+.similar-container {
+  padding: 20px;
+  background-color: #f9fafe; /* Light blue background */
+  border-radius: 8px;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.088);
+}
+
+.similar-title {
+  color: #1a73e8; /* Blue color */
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.similar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.similar-card {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #e0e7ff; /* Light border */
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.similar-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.similar-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 9px;
+  border-radius: 4px;
+  border: 15px solid rgb(89, 136, 246);
+}
+
+.similar-card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.similar-detail {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  color: #6b7280; /* Subtle gray text */
+  margin-bottom: 5px;
+}
+
+.similar-detail span {
+  font-weight: bold;
+  color: #1a73e8; /* Blue highlight */
+}
+
+.similar-enroll-btn {
+  background-color: #1a73e8; /* Blue button */
+  color: #fff;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  margin-top: 2em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.similar-enroll-btn:hover {
+  background-color: #0c438c; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .similar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .similar-card {
+    width: 100%;
+  }
+}
+
+
+
+
+
+/*RightPanel.css */
+/* PB */
+.progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.progress-bar-fill {
+  background-color: #007bff;
+  height: 100%;
+  transition: width 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+ /* section heaader */
+.section-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000080;
+  margin-bottom: 10px;
+}
+
+
+/* List item */
+.list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0 1em;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #FBFCFD;
+  margin-top: 1.4em;
+}
+
+
+.list-item:hover{
+   background-color: #e5e5e6;
+   transform: translateY(-5px);
+   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.list-item-text {
+  font-size: 14px;
+}
+
+.list-item-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.list-item-subtitle {
+  font-size: 12px;
+  color: #666;
+  margin-top: -0.7em;
+}
+
+.right-panel {
+  background-color: #E6F0FF;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  font-family: "Inter", sans-serif;
+  overflow-y: hidden;
+}
+
+.r-section {
+  margin-bottom: 20px;
+  width: auto;
+  height: auto;
+  padding: 1em 0.5em;
+  background-color: #F2F2F2;
+  padding-top: .3em;
+}
+
+.right-panel .r-section .learn{
+  display: flex;
+  align-items: center;
+}
+
+.push{
+  margin-bottom: 7em;
+}
+
+.right-panel .r-section .learn img{
+  height: 20px;
+  width: 20px;
+  margin-right: 6px;
+  margin-top: 5px;
+}
+
+.learning-item {
+  margin: 10px 0 30px 0 ;
+  padding: 0.2em;
+  font-weight: bold;
+  padding-bottom: .7em;
+  background-color: #FBFCFD;
+  border-radius: 10px;
+  padding-left: 0.7em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.learning-item:hover{
+  background-color: #e5e5e6;
+  transform: translateY(-5px);
+  cursor: pointer;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.learning-item p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.spread{
+  background-color:transparent;
+}
+
+
+.spread p{
+  font-size: 12px;
+  background-color: #FBFCFD;
+  padding: 1em;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ .sep:hover{
+  background-color: #e5e5e6;
+  transform: translateY(-5px);
+  cursor: pointer;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+/* WELCOME SECTION */
+
+/* General Styles */
+.welcome-back {
+  background-color: #f8faff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 4em;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.088);
+}
+
+.welcome-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a3b8b;
+  margin-bottom: 15px;
+}
+
+/* Card Grid */
+.welcome-stats {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* Enable wrapping for smaller screens */
+  justify-content: space-between;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 180px; /* Prevent shrinking too much */
+  max-width: 100%; /* Prevent cards from growing too large */
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  background-color: #e2e1e1 ;
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Typography */
+.stat-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #5a5a5a;
+}
+
+.stat-card h4 {
+  margin: 5px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1a3b8b;
+}
+
+.stat-card span {
+  font-size: 12px;
+  color: #888888;
+}
+
+
+
+/* Mycoursess */
+.my-courses {
+  padding: 20px;
+  background-color: #f9fafe; /* Light blue background */
+  border-radius: 8px;
+  margin-bottom: 4em;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.088);
+}
+
+.section-title {
+  color: #1a73e8; /* Blue color */
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.course-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.course-card {
+  flex: 1;
+  background-color: #f1f7ff; /* Slightly darker light blue */
+  padding: 15px 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+.course-card:hover {
+  background-color: #d6e4ff; /* Deeper blue on hover */
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+}
+
+.course-card h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-progress .status {
+  font-size: 14px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: #1a73e8; /* Blue text */
+  background-color: #e7f3ff; /* Light blue background for status */
+}
+
+.course-progress .status.ongoing {
+  color: #1a73e8;
+}
+
+.course-card p {
+  font-size: 14px;
+  font-weight: bold;
+  color: #6b7280; /* Subtle gray text */
+}
+
+.course-card p span {
+  font-weight: bold;
+  color: #1a73e8; /* Blue color for emphasis */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .course-cards {
+    flex-direction: column;
+  }
+
+  .course-card {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* MEDIAAAAAAAAAAAAAA QUERY */
+/* GENERAL MQ */
+
+ @media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  .right-panel {
+    order: 2; /* Ensures the right panel goes below */
+  }
+
+  .main-section {
+    order: 1; /* Ensures the main section stays above */
+  }
+}
+
+
+
+/* For desktop view (large screens) */
+@media (min-width: 1024px) {
+  .sidebar {
+    left: -300px; /* Keep sidebar hidden initially */
+  }
+
+  .header-logo{
+    margin-left: 70px;
+    margin-right: -70px;
+  }
+
+
+  .sidebar.open {
+    left: 0; /* Sidebar comes into view when open */
+  }
+
+  .content {
+    margin-left: 250px; /* Adjust content to the right when sidebar is visible */
+  }
+}
+
+
+
+
+/* HEADER MQ */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content .search-bar {
+    max-width: 300px; /* Shrink the search bar width on small screens */
+    margin: 0 10px; /* Adjust margin on smaller screens */
+  }
+
+  .profile-section {
+    position: static; /* Make profile section static on smaller screens */
+    margin-left: auto; /* Push profile to the right */
+  }
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .profile-section {
+    position: static; /* Make profile section static on smaller screens */
+    margin-left: auto; /* Push profile to the right */
+  }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    .sidebar {
+      width: 200px; /* Adjust sidebar width on mobile */
+    }
+
+    .content.shifted {
+      margin-left: 200px; /* Adjust for mobile sidebar width */
+    }
+
+    .search-bar {
+      min-width: 150px; /* Adjust search bar width for smaller screens */
+    }
+
+
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .main-section {
+    width: 100%; /* Makes it consistent with the right panel */
+    margin: 0 auto; /* Centers the main section */
+  }
+
+  .right-panel {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .welcome-stats {
+    flex-direction: column; /* Stack the cards vertically */
+    gap: 10px;
+  }
+}
