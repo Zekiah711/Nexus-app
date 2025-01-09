@@ -10,7 +10,7 @@ function MyCourses() {
         <div className="course-card">
           <h4>Introduction of Blockchain</h4>
           <div className="course-progress">
-            <span>30%</span>
+            <span>70%</span>
             <span className="status ongoing">Ongoing</span>
           </div>
           <p>
@@ -19,9 +19,9 @@ function MyCourses() {
         </div>
         {/* Card 2 */}
         <div className="course-card">
-          <h4>Community Manager</h4>
+          <h4>Bitcoin Ecosystem</h4>
           <div className="course-progress">
-            <span>0%</span>
+            <span>20%</span>
             <span className="status ongoing">Ongoing</span>
           </div>
           <p>

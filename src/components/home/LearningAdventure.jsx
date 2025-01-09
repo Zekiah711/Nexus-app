@@ -23,7 +23,7 @@ function LearningAdventure() {
   }, []);
 
   const buttonGroups = [
-    ["Introduction to Blockchain", "Tokenomics", "Community Manager", "Project Management"],
+    ["Introduction to the Blockchain", "Bitcoin Blockchain", "Bitcoin Ecosystem", "Bitcoin Integration"],
     ["UI/UX Design Basics", "Figma Mastery", "Prototyping", "User Testing"],
     ["Frontend Basics", "ReactJS", "Backend APIs", "Fullstack Projects"],
     ["Intro to ChatGPT", "Prompt Engineering", "Machine Learning 101", "AI Ethics"],

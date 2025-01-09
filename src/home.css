@@ -22,16 +22,23 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
     gap: 20px; /* Space between elements */
+    position: fixed; /* Ensures the header is fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width across the screen */
+    z-index: 1000; /* Keeps it above other content */
+
   }
 
   .logo-container {
     display: flex;
     justify-content: flex-start; /* Center horizontally */
+    flex-shrink: 0;
     align-items: center; /* Center vertically */
   }
   
   .logo {
-    max-width: 118px; /* Original width */
+    max-width: 180px; /* Original width */
     height: auto; /* Maintains aspect ratio */
   }
   
@@ -41,8 +48,8 @@ header {
   header .search-bar {
     flex-grow: 2;
     min-width: 48px;
-    max-width: 469px;
-    height: 50px;
+    max-width: 500px;
+    height: 40px;
     border-radius: 12px;
     border: 2px solid #96C0FF;
     padding: 1px;
@@ -124,7 +131,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 30px;
+    padding: 200px 70px 30px 40px;
     background-color: #0066ff51;
     gap: 30px;
   }
@@ -179,7 +186,27 @@ header {
     transform: translateY(-2px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  
   }
-  
+
+/* Specific Styling for Get Started Button */
+.text-section .button-container .get-started-btn {
+  background-color: #0065FF !important; /* Blue background */
+  color: #ffffff !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-section .button-container .get-started-btn:hover {
+  background-color: transparent !important; /* Darker blue on hover */
+  color:  #0065FF !important;
+  transform: translateY(-2px);
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.text-section .button-container .get-started-btn:active {
+  background-color: #003f7f !important; /* Even darker blue on click */
+  transform: scale(0.95); /* Shrink slightly when clicked */
+}
+
+
   .image-section {
     flex: 1;
     text-align: right;
@@ -797,46 +824,69 @@ header {
 
 
 /* MEDIA QUERYYYYYYYYY */
-/* logo MQ */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .logo-container {
-    justify-content: center; /* Center horizontally */
-    width: 100%; /* Ensure the container spans the full width */
+  header {
+    padding: 15px 20px; /* Adjust padding for smaller screens */
+    gap: 0px;
   }
+
   .logo {
-    max-width: 100px; /* Slightly smaller size for mobile */
+    max-width: 80px;; /* Shrink logo */
+  }
+
+  header .search-bar {
+    max-width: 200px; /* Reduce search bar width */
+    height: 36px; /* Adjust height */
+    margin-left: -26px;
+  }
+
+  header .search-bar input {
+    font-size: 0.9em; /* Slightly smaller font size */
+    padding-left: 35px;
+  }
+
+  header nav .connect-wallet {
+    padding: 10px 8px; /* Reduce button padding */
+    font-size: 0px; /* Reduce font size */
+  }
+
+  header nav .connect-wallet .wallet-icon {
+    font-size: 20px; /* Adjust icon size */
   }
 }
 
-/* header */
-  /* Media Queries for Smaller Screens */
- @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    header .search-bar {
-      width: 100%;
-      margin: 10px 0; /* Space above and below the search bar */
-    }
-  
-    header nav {
-      width: 100%;
-      justify-content: space-between;
-      margin-top: 10px;
-    }
-  
-    header nav button {
-      margin-right: 10px;
-    }
-  
-    header nav .connect-wallet {
-        width: auto; /* Prevent full width */
-        max-width: 200px; /* Optional: Limit the maximum width */
-        margin: 0 auto; /* Center the button */
-    }
+@media (max-width: 480px) {
+  header {
+    padding: 7px 10px; /* Further reduce padding */
+    gap: 5px;
   }
+
+  .logo {
+    max-width: 70px; /* Further shrink logo */
+  }
+
+  header .search-bar {
+    max-width: 150px; /* Reduce search bar width */
+    height: 36px; /* Adjust height */
+    margin-left: -26px;
+  }
+
+  header .search-bar input {
+    font-size: 0.9em; /* Smaller font size */
+    padding-left: 30px;
+  }
+
+  header nav .connect-wallet {
+    padding: 10px 10px; /* Reduce button padding */
+    font-size: 0px; /* Reduce font size */
+    margin-right: 4px;
+  }
+
+  header nav .connect-wallet .wallet-icon {
+    font-size: 20px; /* Adjust icon size */
+  }
+}
 
 
 
@@ -847,7 +897,7 @@ header {
 @media (max-width: 768px) {
   .hero-section {
     flex-direction: column;
-    padding: 20px 10px;
+    padding: 140px 20px 10px 10px;
   }
 
   .text-section {
@@ -966,9 +1016,9 @@ header {
   }
 
   .learning-buttons button {
-    width: 100%; /* Full width on small screens */
+    width: 90%; /* Full width on small screens */
     max-width: 300px; /* Limit button size */
-    margin: 10px 30px; /* Adds space between buttons */
+    margin: px 30px; /* Adds space between buttons */
   }
 }
 

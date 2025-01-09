@@ -43,6 +43,7 @@ body {
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: fixed;
+  width:100%;
   top: 0;
   left: 0;
   right: 0;
@@ -52,12 +53,11 @@ body {
 .header-logo{
   height: 70px;
   width: 70px;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-left: 6px;
 }
 
 .hamburger {
-  font-size: 24px;
+  font-size: 22px;
   background: none;
   border: none;
   cursor: pointer;
@@ -73,8 +73,8 @@ body {
 }
 
 .header-content .search-bar {
-  flex-grow: 1; /* Allow the search bar to expand and fill space */
-  max-width: 500px; /* Set a max width to prevent it from getting too large */
+  width: 300px;
+  max-width: 400px; /* Set a max width to prevent it from getting too large */
   height: 40px;
   border-radius: 12px;
   border: 2px solid #96C0FF;
@@ -121,7 +121,7 @@ body {
 
 .profile-section {
   display: flex;
-  gap: 40px; /* Space between icons */
+  gap: 20px; /* Space between icons */
   padding: 8px 15px;
   cursor: pointer;
   position: absolute;
@@ -706,23 +706,22 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .header-content .search-bar {
-    max-width: 300px; /* Shrink the search bar width on small screens */
+    max-width: 250px; /* Shrink the search bar width on small screens */
     margin: 0 10px; /* Adjust margin on smaller screens */
+    margin-left: 30px;
   }
 
   .profile-section {
     position: static; /* Make profile section static on smaller screens */
-    margin-left: auto; /* Push profile to the right */
+    margin-left: auto;
+    gap: 10px; /* Push profile to the right */
+  }
+  .profile-icon{
+    font-size: 20px;
   }
 }
 
-/* Responsive Design for smaller screens */
-@media (max-width: 768px) {
-  .profile-section {
-    position: static; /* Make profile section static on smaller screens */
-    margin-left: auto; /* Push profile to the right */
-  }
-}
+
 
 
 

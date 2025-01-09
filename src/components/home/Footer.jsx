@@ -49,7 +49,7 @@ function Footer() {
           <ul>
             <li><a href="#home">Home</a></li> 
             <li><a href="#about">About Us</a></li>
-            <Link to="target-section" smooth={true} duration={500}><li><a href="#courses">Courses</a></li></Link>
+            <Link to="target-section" smooth={true} duration={500}><li>Courses</li></Link>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
