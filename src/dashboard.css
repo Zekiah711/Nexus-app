@@ -670,6 +670,7 @@ body {
     order: 2; /* Ensures the right panel goes below */
   }
 
+
   .main-section {
     order: 1; /* Ensures the main section stays above */
   }
@@ -706,23 +707,47 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .header-content .search-bar {
-    max-width: 250px; /* Shrink the search bar width on small screens */
-    margin: 0 10px; /* Adjust margin on smaller screens */
-    margin-left: 30px;
+    width: 220px; /* Further reduce width */
+    margin-left: -40px;
+    margin-right: 60px;
+  }
+
+  .header-logo {
+    display: none; /* Hide logo */
+  }
+
+  .hamburger {
+    display: block; /* Ensure hamburger menu is visible */
   }
 
   .profile-section {
-    position: static; /* Make profile section static on smaller screens */
-    margin-left: auto;
-    gap: 10px; /* Push profile to the right */
+    position: relative;
+    right: 0;
+    gap: 8px; /* Adjust spacing for profile section */
+    justify-content: center; /* Center the profile section */
   }
-  .profile-icon{
-    font-size: 20px;
+
+  .profile-icon {
+    font-size: 18px; /* Further reduce icon size */
   }
 }
 
+@media (max-width: 546px) {
+  /* Optional: Adjust search bar size and margins further on smaller screens */
+  .header-content .search-bar {
+    width: 70%; /* Increase responsiveness for the search bar */
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 
+  .profile-section {
+    gap: 10px; /* Tighter space between icons */
+  }
 
+  .profile-icon {
+    font-size: 16px; /* Further reduce icon size */
+  }
+}
 
 
 /* Responsive Design */
