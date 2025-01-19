@@ -3,7 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import LoadingSpinner from "./components/LoadingSpinner";
 import Home from "./components/home/Home";
 import Dashboard from "./components/dashboard/Dashboard";
-
+import LoginPage from "./components/login/Login"
+import SignUp from "./components/login/Signup";
+import Courses from "./components/courses/Courses";
 
 
 
@@ -27,6 +29,9 @@ function App() {
         <div>
           <Routes>
           <Route path="/" element={<Home/>} />
+          <Route path="/signup" element={<SignUp/>} />
+          <Route path="/login" element={<LoginPage/>} />
+          <Route path="/courses" element={<Courses/>} />
           <Route path="/dashboard" element={<Dashboard/>} />
           </Routes>
         </div>

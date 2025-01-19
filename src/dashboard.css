@@ -119,8 +119,10 @@ body {
   font-size: 14px;
 }
 
+
 .profile-section {
   display: flex;
+  align-items: center; /* Center align the icons vertically */
   gap: 20px; /* Space between icons */
   padding: 8px 15px;
   cursor: pointer;
@@ -128,15 +130,53 @@ body {
   right: 15px; /* Position profile at the right side */
 }
 
+/* Bell Icon and Wallet Section */
 .profile-icon {
   font-size: 24px; /* Adjust icon size */
   color: #808080; /* Initial icon color */
-  transition: color 0.3s ease; /* Smooth color transition */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and scale transition */
 }
 
-/* Hover Effect */
+/* Hover Effect for Profile Icon */
 .profile-icon:hover {
   color: #0962e8; /* Change color on hover */
+  transform: scale(1.2); /* Slightly enlarge icon on hover */
+}
+
+/* Wallet Section */
+.wallet-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 10px;
+  background-color: #f9f9f9; /* Light background for the wallet section */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth background and shadow transition */
+}
+
+/* Wallet Icon */
+.wallet-icon {
+  height: 24px; /* Icon size */
+  width: 24px;
+}
+
+/* Wallet Text */
+.wallet-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0962e8;
+  transition: color 0.3s ease; /* Smooth text color transition */
+}
+
+/* Hover Effect for Wallet Section */
+.wallet-section:hover {
+  background-color: #eef5ff; /* Light blue background on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+.wallet-section:hover .wallet-text {
+  color: #0747a6; /* Darker blue for text on hover */
 }
 
 
@@ -208,30 +248,18 @@ body {
 .sidebar-nav li {
   padding: 10px 10px;
   display: flex;
-  gap: 10px;
+  gap: 2px;
   justify-content: flex-start; /* Align items to the left */
   align-items: center; /* Vertically center-align the items */
   cursor: pointer;
-  color: #808080;
-  font-weight: bold;
+  font-size: 1em;
   margin-bottom: 1em;
 }
 
-
-.sidebar-nav .last{
-  margin-bottom: 20em;
-}
-
-
 .sidebar-nav li img {
-  margin-right: 1em; /* Space between the icon and text */
-  width: 40px;
-  height: 40px;
-}
-
-.last-div{
-  color: transparent;
-  margin-top: -3.6em;
+  margin-right: 0.5em; /* Space between the icon and text */
+  width: 25px;
+  height: 25px;
 }
 
 .sidebar-nav li:hover {
@@ -240,16 +268,40 @@ body {
   color: #0047B3;
 }
 
-#disconnect {
-  text-decoration: none; /* Removes underline */
-  list-style: none;      /* Ensures no bullet point appears */
+/* Active state styling for NavLink */
+.sidebar-nav li .active {
+  font-weight: bold;
+  color: #0461c4; /* Active text color */
+  border-radius: 12px; /* Match hover state */
 }
 
+/* Remove underline for NavLink */
+.sidebar-nav li a {
+  text-decoration: none;
+  color: inherit; /* Inherit text color for a seamless design */
+  display: flex; /* Make sure it follows the flex layout */
+  align-items: center;
+  gap: 0.5em; /* Maintain gap between icon and text */
+}
 
- #disconnect:hover{
+.sidebar-nav li a:hover {
+  text-decoration: none; /* No underline on hover */
+  color: #0047B3; /* Hover text color */
+  border-radius: 12px;
+}
+
+#disconnect {
+  text-decoration: none; /* Removes underline */
+  margin-top: 7em;
+  list-style: none; /* Ensures no bullet point appears */
+}
+
+#disconnect:hover {
   background-color: #e80712c2;
+}
+#disconnect:hover a{
   color: #420303;
-} 
+}
 
 
 
@@ -730,7 +782,27 @@ body {
   .profile-icon {
     font-size: 18px; /* Further reduce icon size */
   }
+
+  .wallet-section {
+    padding: 4px 6px; /* Reduce padding for smaller size */
+    gap: 6px; /* Less gap between icon and text */
+    border-radius: 6px; /* Slightly smaller rounded corners */
+    background-color: #f9f9f9; /* Retain light background */
+  }
+
+  .wallet-icon {
+    height: 20px; /* Smaller icon size */
+    width: 20px;
+  }
+
+  .wallet-text {
+    font-size: 0.85rem; /* Smaller text size */
+    font-weight: 500; /* Slightly lighter font weight for a balanced look */
+  }
+    
 }
+
+
 
 @media (max-width: 546px) {
   /* Optional: Adjust search bar size and margins further on smaller screens */

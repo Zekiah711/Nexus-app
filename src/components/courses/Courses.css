@@ -1,0 +1,141 @@
+.courses-page {
+    display: flex;
+  }
+  
+  .courses-content {
+    padding: 30px;
+    padding-top: 100px;
+    width: 100%;
+    background-color: rgba(180, 180, 180, 0.075);
+  }
+  
+  .courses-content.shifted {
+    margin-left: 0;
+  }
+  
+  h1 {
+    color: #18289e;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .highlight {
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .categories-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    overflow-x: auto;
+    gap: 15px;
+    margin-bottom: 60px;
+    white-space: nowrap; /* Prevent wrapping of text */
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
+    scrollbar-color: #007bff #f8f9fa; /* Thumb and track colors */
+    padding-bottom: 5px; /* Add some spacing for better appearance */
+  }
+  
+  .categories-tabs::-webkit-scrollbar {
+    height: 8px; /* Horizontal scrollbar height */
+  }
+  
+  .categories-tabs::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* Scrollbar thumb color */
+    border-radius: 4px;
+  }
+  
+  .categories-tabs::-webkit-scrollbar-track {
+    background-color: #f8f9fa; /* Scrollbar track color */
+  }
+  
+  .category-tab {
+    padding: 10px 15px;
+    border: 1px solid #9a9898;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0; /* Prevent shrinking for long text */
+  }
+  
+  .category-tab.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+  
+  
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .course-card {
+    border: 1px solid #ddd;
+    border-radius: 0px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.052);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.089);
+    background-color: rgba(217, 217, 217, 0.095);
+  }
+  
+  .course-card-image {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 16px solid #96C0FF ;
+  }
+  
+  .course-card-content h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .course-card-content p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .course-card-content .xp-points{
+    color: #0056b3;
+  }
+  
+  .enroll-btn {
+    padding: 12px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-bottom: 9px;
+  }
+  
+  .enroll-btn:hover {
+    background-color: #0056b3;
+  }
+  
+
+  @media (min-width: 1024px) {
+    .categories-tabs {
+      justify-content: center; /* Center the categories on larger screens */
+    }
+  }

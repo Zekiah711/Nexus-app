@@ -91,25 +91,52 @@ header {
     color: #96C0FF; /* Blue placeholder */
   }
 
-  header nav button:hover{
-    color:  #4487ec; /* Change text color on hover */
-    transition: color 0.3s ease; /* Smooth transition */
-  }
+
+  header nav {
+    display: flex; /* Use flexbox for side-by-side alignment */
+    align-items: center; /* Vertically center items */
+    justify-content: flex-end; /* Align buttons to the right */
+    gap: 15px; /* Add space between buttons */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    flex-shrink: 0; /* Ensure the nav stays compact */
+}
+
+  /* Navigation Buttons */
+header nav .nav-button {
+  background-color: transparent;
+  color: #007bff;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+header nav .nav-button:hover {
+  color: #02468a; /* Change text color on hover */
+}
   
   /* Wallet Button Styling */
   header nav .connect-wallet {
+    display: flex;
     background-color: #007bff;
     color: #fff;
     border: none;
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Horizontally center content */
     font-weight: bolder;
-    padding: 15px 15px;
+    padding: 12px 12px;
     border-radius: 12px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
     gap: 8px;
     font-size: 15px;
-    
+  }
+
+  .connect-wallet{
+    align-items: center;
   }
 
   header nav .connect-wallet:hover {
@@ -117,12 +144,240 @@ header {
     color: #fff; /* Ensure text remains white */
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
   }
+
+  header nav .connect-wallet span{
+    align-items: center;
+  }
   
   header nav .connect-wallet .wallet-icon {
-    font-size: 14px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
   }
   
 
+  /* LOGIN PAGE STYLE */
+  .login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Inter", sans-serif;
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+
+  .login-page h1{
+    margin-bottom: 1.3em;
+    color:  #0461c4; ;
+
+  }
+  
+  .login-container {
+    background: #c2c1c145;
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .input-field {
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    font-size: 1em;
+    background-color: transparent;
+  }
+  
+  .forgot-password {
+    display: block;
+    text-align: right;
+    margin-bottom: 1em;
+    font-size: 0.9em;
+    color: #007bff;
+    text-decoration: none;
+    transition: background-color 0.4s ease, color 0.3s ease;
+  }
+
+  
+  .login-btn {
+    background-color: #0461c4;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 13px;
+    font-size: 1em;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.4s ease, color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #004187;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.5em 0;
+    margin-top: 2em;
+  }
+  
+  .divider span {
+    background: transparent;
+    padding: 0 10px;
+    font-size: 0.9em;
+    color: #777;
+  }
+  
+  .sign-up{
+      color: #0065FF;
+  }
+
+  .sign-up:hover{
+    color: #054bb4;
+    cursor: pointer;
+  }
+
+  .google-signin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.4px solid #959595;
+    border-radius: 13px;
+    padding: 10px;
+    background: #d7d4d4 ;
+    cursor: pointer;
+    margin-top: 2em;
+    width: 100%;
+    transition: background-color 0.4s ease, color 0.3s ease;
+  }
+
+  .google-signin:hover{
+    background: #a7a5a5 ;
+  }
+
+  
+  .google-signin img {
+    width: 20px;
+    margin-right: 10px;
+  }
+  
+
+
+
+/* General Styles for Sign-Up Page */
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.signup-page h1 {
+  margin-bottom: 1.3em;
+  color: #0461c4;
+}
+
+.signup-container {
+  background: #c2c1c145;
+  padding: 2em;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Input Fields */
+.input-field {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 13px;
+  font-size: 1em;
+  background-color: transparent;
+}
+
+/* Sign-Up Button */
+.signup-btn {
+  background-color: #0461c4;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 13px;
+  font-size: 1em;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.4s ease, color 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #004187;
+}
+
+/* Divider for 'Or' Section */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5em 0;
+  margin-top: 2em;
+}
+
+.divider span {
+  background: transparent;
+  padding: 0 10px;
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* Google Sign-In Button */
+.google-signin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.4px solid #959595;
+  border-radius: 13px;
+  padding: 10px;
+  background: #d7d4d4;
+  cursor: pointer;
+  margin-top: 2em;
+  width: 100%;
+  transition: background-color 0.4s ease, color 0.3s ease;
+}
+
+.google-signin:hover {
+  background: #a7a5a5;
+}
+
+.google-signin img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+/* Link Styling */
+.login-link {
+  color: #0065ff;
+}
+
+.login-link:hover {
+  color: #054bb4;
+  cursor: pointer;
+}
 
 
 
@@ -632,15 +887,18 @@ header {
 /* Get Started Section */
 .get-started {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 40px 20px;
+  padding: 40px 3px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  margin-left: -10em;
   background-color: #fff;
 }
 
 .content {
   max-width: 50%;
-  margin-left: 50px;
+  margin-left: px;
 }
 
 .content h2 {
@@ -836,9 +1094,7 @@ header {
   }
 
   header .search-bar {
-    max-width: 200px; /* Reduce search bar width */
-    height: 36px; /* Adjust height */
-    margin-left: -26px;
+    display: none;
   }
 
   header .search-bar input {
@@ -867,9 +1123,7 @@ header {
   }
 
   header .search-bar {
-    max-width: 150px; /* Reduce search bar width */
-    height: 36px; /* Adjust height */
-    margin-left: -26px;
+      display: none;
   }
 
   header .search-bar input {

@@ -1,73 +1,111 @@
 import React from "react";
+import { NavLink } from 'react-router-dom'; // Import NavLink for routing
 import logo from '../../assets/Nexuslogo.png';
 import Dashboard from '../../assets/dashboard.png';
 import Courses from '../../assets/book.png';
-import Progress from '../../assets/progress2.png';
+import Wallet from '../../assets/wallet.png';
 import Comm from '../../assets/comm.png';
 import Reward from '../../assets/rewardg.png';
 import Cert from '../../assets/capg.png';
 import Faq from '../../assets/faq.png';
 import Logout from '../../assets/logout.png';
-import { Link } from 'react-router-dom';
-
 
 
 function Sidebar({ isOpen, toggleSidebar }) {
 
-  
   return (
     <div className={`sidebar ${isOpen ? "open" : ""}`}>
       <div className="sidebar-header">
         <img src={logo} alt="Logo" className="logo" />
         <button className="close-btn" onClick={toggleSidebar}>
-             ☰ 
+          ☰
         </button>
       </div>
 
       <nav className="sidebar-nav">
         <ul>
           <li>
-            <img  src={Dashboard} />
-             Dashboard
+            <NavLink
+              to="/courses" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={toggleSidebar}
+            >
+              <img src={Courses} alt="Courses" />
+              Courses
+            </NavLink>
           </li>
           <li>
-          <img  src={Courses} />
-           My Courses
+            <NavLink
+              to="/dashboard" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={toggleSidebar}
+            >
+              <img src={Dashboard} alt="Dashboard" />
+              Dashboard
+            </NavLink>
           </li>
           <li>
-          <img  src={Progress} />
-          Learning Progress
+            <NavLink
+              to="/community" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={toggleSidebar}
+            >
+              <img src={Comm} alt="Community" />
+              Community
+            </NavLink>
           </li>
           <li>
-          <img  src={Comm} />
-           Community
+            <NavLink
+              to="/wallet" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={toggleSidebar}
+            >
+              <img src={Wallet} alt="Wallet" />
+              Wallet
+            </NavLink>
           </li>
           <li>
-          <img  src={Reward} />
-           Reward
+            <NavLink
+              to="/reward" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={toggleSidebar}
+            >
+              <img src={Reward} alt="Reward" />
+              Reward
+            </NavLink>
           </li>
           <li>
-          <img  src={Cert} />
-            Certificate
+            <NavLink
+              to="/certificate" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={toggleSidebar}
+            >
+              <img src={Cert} alt="Certificate" />
+              Certificate
+            </NavLink>
           </li>
-          <li className="last">
-          <img  src={Faq} />
-           Support & FAQ
+          <li>
+            <NavLink
+              to="/faq" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={toggleSidebar}
+            >
+              <img src={Faq} alt="FAQ" />
+              Support & FAQ
+            </NavLink>
           </li>
-          <Link style={{ textDecoration: "none" }} to="/">
-              <li id="disconnect">
-              <img  src={Logout} />
-                Back To Home
-              </li>
-          </Link>
-          {/* Add more menu items as needed */}
+          <li id="disconnect">
+            <NavLink
+              to="/" 
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={toggleSidebar}
+            >
+              <img src={Logout} alt="Logout" />
+              Back To Home
+            </NavLink>
+          </li>
         </ul>
-          <div className="last-div">
-       <p>ehe</p>
-      </div>
       </nav>
-     
-
     </div>
   );
 }

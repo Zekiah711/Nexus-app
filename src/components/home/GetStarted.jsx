@@ -10,7 +10,7 @@ function GetStarted() {
         <h2>Get Started For Free</h2>
         <p className="subtitle">Take your first step today</p>
         <p className="description">
-          Join Nexus and unlock a world of opportunities. Get started by
+          Join Nexus and unlock a world of opportunities. Get started by <br />
           clicking the <a href="#">connect wallet</a> button to start learning,
           earning, and growing.
         </p>

@@ -35,13 +35,19 @@ function HeroSection() {
           />
         </div>
 
-        {/* Navigation */}
-        <nav>
-          <button className="nav-button connect-wallet">
-            <FaWallet className="wallet-icon" /> Connect Wallet
-          </button>
-        </nav>
-      </header>
+       {/* Navigation */}
+      <nav>
+      <RouterLink to="target-section" smooth={true} duration={700}>
+        <button class="nav-button">Explore</button>
+      </RouterLink>
+        <Link to="./login">
+           <button class="nav-button">Login</button>
+        </Link>
+        <button class="connect-wallet">
+          <span class="wallet-icon"><i class="fa fa-wallet"></i></span>Connect Wallet
+        </button>
+      </nav>
+    </header>
 
       {/* Hero Section */}
       <section className="hero-section">
@@ -58,7 +64,7 @@ function HeroSection() {
              <button>Explore More</button>
              </RouterLink>
 
-             <Link to="/dashboard">
+             <Link to="/courses">
                 <button className="get-started-btn">Get Started</button>
              </Link>
           </div>
